@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ANIMALIA</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="/css/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <!--Bonus Button animation -->
+  <style media="screen">
+    .fcc-btn {
+      background-color: #6cd29f;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+    }
+    .fcc-btn:hover {
+      background-color: #223094;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+
+    <div class="topnav">
+      <% if (check === 1) { %>
+        <p class="username">Hi, <%=user.name %></p>
+        <%} %>
+      <div class="topnav-right">
+        <a href="/nosignin/homepage">HOME</a>
+        <a target="_blank" href="/nosignin/homepage/andhra_pradesh/quiz">QUIZ</a>
+        <a target="_blank" href="/nosignin/homepage/andhra_pradesh/instructions">INSTRUCTIONS</a>
+        <% if (check === 1) { %>
+        <a href="/" onclick="signOut();">SIGN OUT</a>
+        <% } %>
+      </div>
+    </div>
+
+
+    <img src="images/timelinebg2.jpg" alt="" class="timelineimage">
+    <h1>WELCOME TO JAMMU and KASHMIR WILDLIFE!</h1>
+
+  </div>
+
+  <!-- 5 time period display -->
+  <div class="container">
+
+    <div class="top-section">
+      <h1>Wildlife of Jammu and Kashmir </h1>
+      <p> The state of Jammu and Kashmir, as an integral part of western Himalayas, is known
+for its beauty and biological resources.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="line"></div>
+
+
+      <div class="section">
+        <div class="bead"></div>
+        <div class="content">
+          <h2>(1971 - 1981)</h2>
+          <p>After the Stockholm Conference of June 1972 host of centrally enacted
+laws for the protection of the environment have either a direct application in the state
+or have been applied with the concurrence of the state.</p>
+          <br>
+          <a href="/nosignin/homepage/jk/stream1"> <button class="showmorebutton">Show me more!</button> </a>
+        </div>
+        <img src="images/presentation.png" class="img-right">
+      </div>
+
+
+      <div class="section">
+        <div class="bead"></div>
+        <div class="content">
+          <h2>(1981 - 1991)</h2>
+          <p>A significant proportion of the rich repository of biodiversity in Jammu and Kashmir state is currently experiencing anthropogenic threat at an alarming rate.</p>
+          <br>
+          <a href="/nosignin/homepage/jk/stream2"> <button class="showmorebutton">Show me more!</button> </a>
+        </div>
+        <img src="images/nature.png" class="img-left" style="width: 20%; height: 20%;">
+      </div>
+
+
+      <div class="section">
+        <div class="bead"></div>
+        <div class="content">
+          <h2>(1991 - 2001)</h2>
+          <p>Historically, the conservation of wildlife and forests in Jammu & Kashmir has an illustrious legacy, tracing back to the erstwhile Maharaja’s rule.</p>
+          <br>
+          <a href="/nosignin/homepage/jk/stream3"> <button class="showmorebutton">Show me more!</button> </a>
+        </div>
+        <img src="images/maharaja.png" class="img-right">
+      </div>
+
+
+
+      <div class="section">
+        <div class="bead"></div>
+        <div class="content">
+          <h2>(2001 - 2011)</h2>
+          <p>Over the years, several botanical gardens, zoos and aquaria have been established, which contribute to the ex situ conservation of biodiversity in the state.</p>
+          <br>
+          <a href="/nosignin/homepage/jk/stream4"> <button class="showmorebutton">Show me more!</button> </a>
+        </div>
+        <img src="images/flowers.png" class="img-left" style="width: 20%; height: 20%;">
+      </div>
+
+
+
+      <div class="section">
+        <div class="bead"></div>
+        <div class="content">
+          <h2>(2011 - 2021)</h2>
+          <p>Presently, under in situ conservation approach, about 15.6% of total geographic area of the state has been demarcated under the protected area network.</p>
+          <br>
+          <a href="/nosignin/homepage/jk/stream5"> <button class="showmorebutton">Show me more!</button> </a>
+          <!-- class="fcc-btn" -->
+        </div>
+        <img src="images/geography.png" class="img-right">
+      </div>
+
+
+
+
+    </div>
+  </div>
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function() {
+        console.log("User signed out.");
+      })
+    }
+  </script>
+<!-- Java Script file link -->
+  <script src="js/timeline.js"></script>
+</body>
+
+</html>
+
+<!-- FIXME: Some additional(empty) space in right -->
+<!-- TODO: Button CSS improvement -->

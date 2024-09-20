@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Congrats!</title>
+  <link rel="stylesheet" href="css/app.css" />
+  <!-- Redirect or download marker prompt -->
+  <!-- <script>
+    function newDoc() {
+      var ask = window.confirm("Do you want to download HIRO marker? Press 'ok', else 'cancel'");
+      if (ask) {
+        window.open('/downloadmarker', '_blank');
+      } else {
+        window.open('/nosignin/homepage/andhra_pradesh/quiz/claim_reward', '_blank');
+      }
+    }
+  </script> -->
+
+
+  <% if (check === 0) { %>
+  <script>
+    function newDoc() {
+      var ask = window.confirm("Do you want to download HIRO marker? Press 'ok', else 'cancel'");
+      if (ask) {
+        window.open('/downloadmarker', '_blank');
+      } else {
+        window.open('/nosignin/homepage/andhra_pradesh/quiz/claim_reward', '_blank');
+      }
+    }
+  </script>
+  <% } %>
+
+  <% if (check === 1) { %>
+  <script>
+    function doSomething() {
+      var ask = window.confirm("Do you want to download HIRO marker? Press 'ok', else 'cancel'");
+      if (ask) {
+        window.open('/downloadmarker', '_blank');
+      } else {
+        window.open('/signin/homepage/andhra_pradesh/quiz/claim_reward', '_blank');
+      }
+    }
+  </script>
+  <% } %>
+
+  <script>
+    function close_window() {
+      if (confirm("Close Window?")) {
+        window.close();
+      }
+    }
+  </script>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div id="end" class="flex-center flex-column">
+      <h1 id="finalScore">0</h1>
+      <form>
+        <% if (check === 0) { %>
+        <input type="text" name="username" id="username" placeholder="username" />
+        <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+          Save
+        </button>
+        <% } %>
+      </form>
+      <a class="btn" href="/nosignin/homepage/andhra_pradesh/quiz/play">Play Again</a>
+      <% if (check === 0) { %>
+      <a class="btn" onclick="newDoc()" id="check" style="visibility: visible;">Claim Reward</a>
+      <% } %>
+      <% if (check === 1) { %>
+      <a class="btn" onclick="doSomething()" id="check" style="visibility: visible;">Claim Reward</a>
+      <% } %>
+      <% if (check === 0) { %>
+      <a class="btn" href="/nosignin/homepage/andhra_pradesh/quiz/highscores">High Scores</a>
+      <% } %>
+      <!-- <a class="btn" href="javascript:close_window();">Close Quiz</a> -->
+      <input type="button" value="Close this window" onclick="self.close()">
+    </div>
+  </div>
+  <script>
+    close_win1(){
+      window.top.close();
+    }
+  </script>
+  <script src="js/end.js"></script>
+</body>
+
+</html>
+
+<!-- TODO: Stop taking username in case of signed in users -->
+<!-- TODO: Make quiz reward dsappear for 0 score -->
